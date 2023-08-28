@@ -59,7 +59,13 @@ Contribuições são bem-vindas! Sinta-se à vontade para criar pull requests.
 
 4. Acesse a aplicação por:
 
-    http://localhost:8080
+    "http://localhost:8080"
+   
+5. Exemplos de Uso:
+   
+    Listar todos os posts: [http://localhost:8080/posts](http://localhost:8080/posts)
+    Obter detalhes de um post: [http://localhost:8080/posts/{id}](http://localhost:8080/posts/{id})
+
 
    
 
