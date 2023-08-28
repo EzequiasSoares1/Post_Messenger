@@ -38,11 +38,15 @@ public class PostService {
     }
 
     public Post findById(Long id) {
+        verifyId(id);
+
         Optional<Post> optionalPost = postRepository.findById(id);
         return optionalPost.orElse(null);
     }
 
     public Post savePost(Long id) {
+        verifyId(id);
+
         Post post = findById(id);
 
         if(post != null ){
@@ -84,6 +88,8 @@ public class PostService {
     }
 
     public void desablePost(Long id) {
+        verifyId(id);
+
         Post post = findById(id);
 
         if(post == null){
@@ -99,6 +105,7 @@ public class PostService {
     }
 
     public Post reprocessPost(Long id) {
+        verifyId(id);
         Post post = findById(id);
 
         if(post == null){
@@ -158,6 +165,8 @@ public class PostService {
     }
 
     public Post update(Long id, Post updatedPost) {
+        verifyId(id);
+
         Post existingPost = findById(id);
         if (existingPost != null) {
             existingPost.setTitle(updatedPost.getTitle());
@@ -170,5 +179,10 @@ public class PostService {
         }
     }
 
+    private void verifyId(Long id){
+        if( id <= 0 || id >= 101){
+            throw new NotFoundException("Post not found");
+        }
+    }
 
 }

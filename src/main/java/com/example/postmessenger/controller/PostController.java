@@ -2,9 +2,6 @@ package com.example.postmessenger.controller;
 import com.example.postmessenger.entity.Post;
 import com.example.postmessenger.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.webjars.NotFoundException;
@@ -31,7 +28,6 @@ public class PostController {
     @PostMapping("/{postId}")
     public ResponseEntity<?> processPost(@PathVariable Long postId) {
         try {
-            verifyId(postId);
             Post posts = postService.savePost(postId);
             return ResponseEntity.ok(posts);
 
@@ -46,7 +42,6 @@ public class PostController {
     @DeleteMapping("/{postId}")
     public ResponseEntity<String> disablePost(@PathVariable Long postId) {
         try {
-            verifyId(postId);
 
             postService.desablePost(postId);
             return ResponseEntity.ok("Post disabled successfully.");
@@ -62,7 +57,6 @@ public class PostController {
     @PutMapping("/{postId}")
     public ResponseEntity<String> reprocessPost(@PathVariable Long postId) {
         try {
-            verifyId(postId);
 
             Post reprocessedPost = postService.reprocessPost(postId);
             return ResponseEntity.ok("Post reprocessed successfully");
@@ -75,11 +69,7 @@ public class PostController {
         }
     }
 
-    private void verifyId(Long id){
-        if( id <= 0 || id >= 101){
-            throw new NotFoundException("Post not found");
-        }
-    }
+
 }
 
 
