@@ -1,71 +1,69 @@
 # Post Messenger
 
-O Post Messenger é um projeto que oferece uma plataforma para criação, gerenciamento e processamento de posts.
-Ele foi desenvolvido utilizando tecnologias Java e Spring Boot, e possui integração com serviços externos por meio do WebClient.
+Post Messenger is a project that offers a platform for creating, managing, and processing posts. It has been developed using Java and Spring Boot technologies, and it integrates with external services through WebClient.
 
-## Funcionalidades
+## Features
 
-- Criação de novos posts
-- Listagem de todos os posts
-- Atualização de um post existente
-- Desabilitação de um post
-- Reprocessamento de um post
+- Creation of new posts
+- Listing all posts
+- Updating an existing post
+- Disabling a post
+- Reprocessing a post
 
-## Tecnologias Utilizadas
+## Used Technologies
 
 - Java
 - Spring Boot
 - Hibernate
-- H2 Database (em memória)
-- WebClient (para integração com serviços externos)
+- H2 Database (in-memory)
+- WebClient (for integration with external services)
 - Springdoc OpenAPI UI
 
-## Documentação da API
+## API Documentation
 
-O projeto inclui uma documentação interativa da API, que pode ser acessada através da seguinte URL: http://localhost:8080/swagger-ui.html.
-Essa documentação fornece detalhes sobre os endpoints disponíveis, seus parâmetros e respostas, permitindo testar e entender melhor as funcionalidades oferecidas pelo Post Messenger.
+The project includes an interactive API documentation, which can be accessed at the following URL: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html). This documentation provides details about available endpoints, their parameters, and responses, allowing you to test and better understand the functionalities provided by Post Messenger.
 
-## Configuração do Banco de Dados
+## Database Configuration
 
-O projeto utiliza o H2 Database em memória para armazenar os dados. O banco de dados é configurado automaticamente quando a aplicação é iniciada.
+The project uses an in-memory H2 Database to store data. The database is automatically configured when the application is started.
 
-## Endpoints Disponíveis
+## Available Endpoints
 
-- `GET /posts`: Retorna a lista de todos os posts.
-- `GET /posts/{id}`: Retorna os detalhes de um post específico.
-- `POST /posts`: Cria um novo post.
-- `PUT /posts/{id}`: Atualiza um post existente.
-- `DELETE /posts/{id}`: Desabilita um post existente.
-- `PUT /posts/{id}/reprocess`: Reprocessa um post existente.
+- `GET /posts`: Returns the list of all posts.
+- `GET /posts/{id}`: Returns details of a specific post.
+- `POST /posts`: Creates a new post.
+- `PUT /posts/{id}`: Updates an existing post.
+- `DELETE /posts/{id}`: Disables an existing post.
+- `PUT /posts/{id}/reprocess`: Reprocesses an existing post.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Sinta-se à vontade para criar pull requests.
+Contributions are welcome! Feel free to create pull requests.
 
-## Como Executar
+## How to Run
 
-1. Clone o repositório para a sua máquina:
+1. Clone the repository to your machine:
    
    "git clone https://github.com/kia735/Challenger_3-PostMessenger-"
    
-2. Navegue para o diretório do projeto:
+2. Navigate to the project directory:
 
     cd Challenger_3-PostMessenger-
 
-3. Execute a aplicação usando o Maven:
+3. Run the application using Maven:
 
     ./mvnw spring-boot:run
 
 
-4. Acesse a aplicação por:
+4. Access the application at:
 
     "http://localhost:8080"
    
-5. Exemplos de Uso:
+5. Usage Examples:
    
-    Listar todos os posts: [http://localhost:8080/posts](http://localhost:8080/posts);
+- List all posts:  [http://localhost:8080/posts](http://localhost:8080/posts);
    
-    Obter detalhes de um post: [http://localhost:8080/posts/{id}](http://localhost:8080/posts/{id})
+- Get details of a post: [http://localhost:8080/posts/{id}](http://localhost:8080/posts/{id});
 
 
    
