@@ -13,7 +13,8 @@ import lombok.Setter;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private Long idValue;
     @Column(length = 1000)
     private String body;
 }
